@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=uniquepersonid\ personfirstname\ personlastname
+comment0.target=Person(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Book\r\n
+comment1.params=
+comment1.target=java.lang.String\ getuniquePersonID()
+comment1.text=\r\n\ \r\n
+comment2.params=
+comment2.target=java.lang.String\ getFirstename()
+comment2.text=\r\n\ \r\n
+comment3.params=
+comment3.target=java.lang.String\ getLastname()
+comment3.text=\r\n\ \r\n
+comment4.params=p
+comment4.target=int\ compareTo(Person)
+numComments=5
