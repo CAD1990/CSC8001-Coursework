@@ -67,15 +67,10 @@ public class Library
             for (int i = 0; i < booking.size(); i++)
             {
                 Book b = booking.get(i);
-                System.out.println("");
-                System.out.println("###################################");
-                System.out.println("#######" + b.gettitleBook() +"######");
-                System.out.println("###################################");
-                System.out.println("~~~~~~~~~~~~~ Author ~~~~~~~~~~~~~~");
-                System.out.println(b.getFirstLine() +" "+ b.getLastLine());
-                System.out.println("###################################");
-                System.out.println("");
-
+                System.out.println("---------------------------------------");
+                System.out.println((i+1) + ") " + b.gettitleBook());
+                System.out.println(b.getFirstLine() + " " + b.getLastLine());
+                System.out.println("---------------------------------------");
             }
             break;
             case "u":
@@ -83,12 +78,14 @@ public class Library
             for (int i = 0; i < person.size(); i++)
             {
                 User u = person.get(i);
+                System.out.println("---------------------------------------");
                 System.out.println(u.getFirstLine() + " " + u.getLastLine());
+                System.out.println("---------------------------------------");
 
             }
             break;
             case "i":
-            // Perform "quit" case.
+            issueBook();
             break;
             case "r":
             //
@@ -141,8 +138,7 @@ public class Library
         }
         String firstLine = "";
         String lastLine = "";
-    
-       
+
         for (int i = 0; i <string.size(); i++)
         {
             if (i < noBooks * 2)
@@ -160,6 +156,95 @@ public class Library
                 lastLine = string.get(i).substring(string.get(i).lastIndexOf(" ") + 1);
                 person.add(new User(firstLine, lastLine));
             }
-         }
+        }
+    }
+
+    public static void issueBook()
+    {
+        System.out.println("Which book would you like to loan?");
+        System.out.println();
+        for (int i=0; i<booking.size(); i++)
+        {
+            System.out.println((i+1) +") "+ booking.get(i).gettitleBook()); 
+        }
+        System.out.println();
+        Scanner issuer = new Scanner(System.in);
+        System.out.println("Type the name of the book");
+
+        String bookinput = issuer.nextLine();
+        System.out.print("> ");
+        boolean isExist = false;
+        String stored = "";
+        String user = "";
+        for (int i=0; i<booking.size(); i++)
+        {
+            Book b = booking.get(i);
+            if (bookinput.equalsIgnoreCase(b.gettitleBook()))
+            {
+                stored = booking.get(i).gettitleBook();
+                System.out.println(stored + " is currently in the Library");
+                isExist = true;
+                break;
+            }
+        }
+
+        if (isExist)
+        {
+            System.out.println();
+            System.out.println("Please select which user you would like to issue " + stored + " to."); 
+            System.out.println();
+            for (int i=0; i<person.size(); i++)
+            {
+                System.out.println((i+1) +") "+ person.get(i).getFirstLine() + " " + person.get(i).getLastLine());
+                System.out.println();
+            }
+            String userinput = issuer.nextLine();
+            System.out.print("> ");
+            boolean uExist = false;
+            int us = 0;
+            for (int i=0; i<person.size(); i++)
+            {
+                User u = person.get(i);
+                if (userinput.equalsIgnoreCase(u.getFirstLine() + u.getLastLine()))
+                {
+                    user = person.get(i).getFirstLine() + u.getLastLine();
+                    System.out.println(user + " is currently a valid user.");
+                    us = i;
+                    uExist = true;
+                    break;
+                }
+            }
+
+            if (uExist)
+            {
+                String title = "";
+                String firstname ="";
+                String lastname="";
+                int ind = 0;
+                for (int i=0; i<booking.size(); i++)
+                {
+                    Book b = booking.get(i);
+                    if (stored.equals(b.gettitleBook()))
+                    {
+                        ind = i;
+                        title = stored;
+                        firstname = booking.get(ind).getFirstLine();
+                        lastname = booking.get(ind).getLastLine();
+                    }
+                }
+                Book loan = new Book(title, firstname, lastname);
+               /////////////Currently Coding///////////////// 
+            }
+            else
+            {
+                System.out.println(userinput + " is not currently a valid user.");  
+            }
+
+        }
+        else
+        {
+            System.out.println(bookinput + " is not currently in the Library.");
+        }
+
     }
 }
