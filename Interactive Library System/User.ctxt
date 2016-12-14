@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=firstLine\ lastLine\ titleBook
-comment0.target=Book(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment0.params=firstLine\ lastLine
+comment0.target=User(java.lang.String,\ java.lang.String)
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Book\r\n
 comment1.params=
 comment1.target=java.lang.String\ getFirstLine()
@@ -8,8 +8,6 @@ comment1.text=\r\n\ \r\n
 comment2.params=
 comment2.target=java.lang.String\ getLastLine()
 comment2.text=\r\n\ \r\n
-comment3.params=
-comment3.target=java.lang.String\ gettitleBook()
-comment4.params=b
-comment4.target=int\ compareTo(Book)
-numComments=5
+comment3.params=u
+comment3.target=int\ compareTo(User)
+numComments=4

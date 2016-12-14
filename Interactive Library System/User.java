@@ -1,27 +1,24 @@
 
 /**
- * Write a description of class Book here.
+ * Write a description of class Person here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Book implements Comparable<Book>
+public class User implements Comparable<User>
 {
-    private String titleBook;
     private String firstLine;
     private String lastLine;
-   
-   
     /**
      * Constructor for objects of class Book
      */
-    public Book(String firstLine, String lastLine, String titleBook)
+    public User (String firstLine, String lastLine)
+ 
     {
-        this.titleBook = titleBook;
         this.firstLine = firstLine;
         this.lastLine = lastLine;
     }
-   
+
     /**
      * 
      */
@@ -37,15 +34,10 @@ public class Book implements Comparable<Book>
     {
         return lastLine;
     }
-     public String gettitleBook()
-    {
-        return titleBook;
-    }
-
     @Override
-    public int compareTo(Book b)
+    public int compareTo(User u)
     {
-        int compare = this.lastLine.compareTo(b.getLastLine());
+        int compare = this.lastLine.compareTo(u.getLastLine());
         if (compare <0) 
         {
             return -1;
