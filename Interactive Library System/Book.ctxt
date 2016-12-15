@@ -1,5 +1,5 @@
 #BlueJ class context
-comment0.params=firstLine\ lastLine\ titleBook
+comment0.params=titleBook\ firstLine\ lastLine
 comment0.target=Book(java.lang.String,\ java.lang.String,\ java.lang.String)
 comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Book\r\n
 comment1.params=

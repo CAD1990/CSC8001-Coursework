@@ -15,7 +15,7 @@ public class Book implements Comparable<Book>
     /**
      * Constructor for objects of class Book
      */
-    public Book(String firstLine, String lastLine, String titleBook)
+    public Book(String titleBook, String firstLine, String lastLine)
     {
         this.titleBook = titleBook;
         this.firstLine = firstLine;

@@ -3,10 +3,7 @@ import java.lang.*;
 import java.util.*;
 
 /**
- * Write a description of class Library here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
  */
 public class Library
 {
@@ -26,27 +23,15 @@ public class Library
     }
 
     /**
-     * An example of a method - replace this comment with your own
      * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
      */
     public static void main(String[] args)throws FileNotFoundException
     {
-
-        ////////////////////////////
         parseFile();
-        System.out.println("Size of Integers: " + integer.size());
-        System.out.println("Size of Strings: " + string.size());
-        System.out.println("Integers");
-        System.out.println(integer);
-        System.out.println("Strings");
-        System.out.println(string);
-        System.out.println("Sorted ArrayList Book");
-        System.out.println(booking);
-        System.out.println("Sorted ArrayList USer");
-        System.out.println(person);
-        ////////////////////////////    
+        menuScreen();
+    } 
+    public static void menuScreen() throws FileNotFoundException
+    {
         System.out.println("############################################");
         System.out.println("############## Library System ##############");
         System.out.println("############################################");
@@ -93,7 +78,7 @@ public class Library
             default:
             // The user input an unexpected choice.
         }
-    } 
+    }
 
     public static void parseFile() throws FileNotFoundException
     {
@@ -147,7 +132,7 @@ public class Library
                 {
                     firstLine = string.get(i+1).substring(0, string.get(i+1).lastIndexOf(" "));
                     lastLine = string.get(i+1).substring(string.get(i+1).lastIndexOf(" ") + 1);
-                    booking.add(new Book(firstLine, lastLine, string.get(i)));
+                    booking.add(new Book(string.get(i), firstLine, lastLine));
                 }
             }
             else
@@ -159,14 +144,16 @@ public class Library
         }
     }
 
-    public static void issueBook()
+    public static void issueBook()throws FileNotFoundException
     {
         System.out.println("Which book would you like to loan?");
         System.out.println();
+
         for (int i=0; i<booking.size(); i++)
         {
             System.out.println((i+1) +") "+ booking.get(i).gettitleBook()); 
         }
+
         System.out.println();
         Scanner issuer = new Scanner(System.in);
         System.out.println("Type the name of the book");
@@ -205,9 +192,12 @@ public class Library
             for (int i=0; i<person.size(); i++)
             {
                 User u = person.get(i);
-                if (userinput.equalsIgnoreCase(u.getFirstLine() + u.getLastLine()))
+                String first = person.get(i).getFirstLine(); 
+                String last = person.get(i).getLastLine();
+                String name = first+" "+ last;
+                if (userinput.equalsIgnoreCase(name))
                 {
-                    user = person.get(i).getFirstLine() + u.getLastLine();
+                    user = name;
                     System.out.println(user + " is currently a valid user.");
                     us = i;
                     uExist = true;
@@ -215,11 +205,13 @@ public class Library
                 }
             }
 
+            ////////////////Check to see if book is on loan/////////////////////////////////
+
             if (uExist)
             {
                 String title = "";
-                String firstname ="";
-                String lastname="";
+                String firstname = "";
+                String lastname= "";
                 int ind = 0;
                 for (int i=0; i<booking.size(); i++)
                 {
@@ -227,17 +219,29 @@ public class Library
                     if (stored.equals(b.gettitleBook()))
                     {
                         ind = i;
-                        title = stored;
-                        firstname = booking.get(ind).getFirstLine();
-                        lastname = booking.get(ind).getLastLine();
+                        title = booking.get(i).gettitleBook();
+                        firstname = booking.get(i).getFirstLine();
+                        lastname = booking.get(i).getLastLine();
+                        break;
                     }
                 }
                 Book loan = new Book(title, firstname, lastname);
-               /////////////Currently Coding///////////////// 
+                User u;
+                person.get(us).addBook(loan);
+                booking.remove(ind);
+                System.out.println(user+ " has loaned " + title);
+                System.out.println();
+                System.out.println("Returning to Main Menu");
+                System.out.println("-------------------------------");
+                menuScreen();
             }
             else
             {
-                System.out.println(userinput + " is not currently a valid user.");  
+                System.out.println(userinput + " is not currently a valid user.");
+                System.out.println();
+                System.out.println("Returning to Main Menu");
+                System.out.println("-------------------------------");
+                menuScreen();
             }
 
         }
