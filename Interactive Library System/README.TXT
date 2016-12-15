@@ -1,12 +1,15 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all he/she needs to know. The comments should usually include at least:
-------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+    ____      __                       __  _               __    _ __                             _____            __               
+   /  _____  / /____  _________ ______/ /_(__   _____     / /   (_/ /_  _________ ________  __   / ___/__  _______/ /____  ____ ___ 
+   / // __ \/ __/ _ \/ ___/ __ `/ ___/ __/ | | / / _ \   / /   / / __ \/ ___/ __ `/ ___/ / / /   \__ \/ / / / ___/ __/ _ \/ __ `__ \
+ _/ // / / / /_/  __/ /  / /_/ / /__/ /_/ /| |/ /  __/  / /___/ / /_/ / /  / /_/ / /  / /_/ /   ___/ / /_/ (__  / /_/  __/ / / / / /
+/___/_/ /_/\__/\___/_/   \__,_/\___/\__/_/ |___/\___/  /_____/_/_.___/_/   \__,_/_/   \__, /   /____/\__, /____/\__/\___/_/ /_/ /_/ 
+                                                                                     /____/         /____/                          
+------------------------------------------------------------------------------------------------------------------------------------------
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
+PROJECT TITLE: CSC8001-Interactive Library System
+PURPOSE OF PROJECT: 
 VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+HOW TO START THIS PROJECT: via the main method in the Library Class
+AUTHORS: Craig Dawson
+USER INSTRUCTIONS: Activate via the 
