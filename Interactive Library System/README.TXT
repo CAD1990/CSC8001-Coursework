@@ -8,8 +8,8 @@
 ------------------------------------------------------------------------------------------------------------------------------------------
 
 PROJECT TITLE: CSC8001-Interactive Library System
-PURPOSE OF PROJECT: 
-VERSION or DATE:
+PURPOSE OF PROJECT: Coursework for Programming CSC8001
+VERSION or DATE: 16th December 2016
 HOW TO START THIS PROJECT: via the main method in the Library Class
 AUTHORS: Craig Dawson
-USER INSTRUCTIONS: Activate via the 
+USER INSTRUCTIONS: Activate via the main method in the Library Class
